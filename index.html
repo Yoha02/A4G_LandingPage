@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-mmunity | Google Cloud Next '26</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="gradient-sphere sphere-1"></div>
+        <div class="gradient-sphere sphere-2"></div>
+        <div class="gradient-sphere sphere-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">🤖</span>
+                <span class="logo-text">AI-mmunity</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#team">Team</a>
+                <a href="#project">Project</a>
+                <a href="#contact" class="nav-cta">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Parallax -->
+    <section class="hero" id="hero">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+            <div class="badge" data-aos="zoom-in" data-aos-delay="200">
+                <span class="badge-icon">🏆</span>
+                <span>Google Cloud Agentic AI Arena Winners</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line" data-aos="fade-up" data-aos-delay="300">Meet the Team Behind</span>
+                <span class="title-gradient" data-aos="fade-up" data-aos-delay="400">AI-mmunity</span>
+            </h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="500">
+                A multi-agent system transforming community health, built with Google ADK.
+                <br>Presenting at <strong>Google Cloud Next '26</strong>
+            </p>
+            <div class="hero-cta" data-aos="fade-up" data-aos-delay="600">
+                <a href="#team" class="btn btn-primary">
+                    <span>Meet the Team</span>
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="https://aimmunity.io/" target="_blank" class="btn btn-secondary">
+                    <span>Live Demo</span>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual" data-aos="fade-left" data-aos-duration="1500">
+            <div class="floating-card card-1">
+                <i class="fas fa-brain"></i>
+                <span>8 AI Agents</span>
+            </div>
+            <div class="floating-card card-2">
+                <i class="fas fa-cloud"></i>
+                <span>Google Cloud</span>
+            </div>
+            <div class="floating-card card-3">
+                <i class="fas fa-heartbeat"></i>
+                <span>Health Data</span>
+            </div>
+            <div class="floating-card card-4">
+                <i class="fas fa-bolt"></i>
+                <span>Built in 3 Days</span>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">The Project</span>
+                <h2>Transforming Public Health Access</h2>
+                <p>AI-mmunity makes complex health data accessible to everyone through natural language</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Natural Language Access</h3>
+                    <p>Chat with a dashboard to instantly visualize air quality, disease outbreaks, and health tips</p>
+                </div>
+                <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>8 Specialist Agents</h3>
+                    <p>Air Quality, Disease, Clinic Finder, Health FAQ, Persona-Aware, and more working in harmony</p>
+                </div>
+                <div class="about-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3>Automated PSA</h3>
+                    <p>Generate actionable reports and broadcast public alerts in multiple formats instantly</p>
+                </div>
+                <div class="about-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Live Data Sources</h3>
+                    <p>Connected to EPA, CDC, AirNow API and 5 other real-time health data sources</p>
+                </div>
+            </div>
+            <div class="tech-stack" data-aos="fade-up" data-aos-delay="500">
+                <span class="tech-label">Built With</span>
+                <div class="tech-logos">
+                    <div class="tech-item">
+                        <img src="https://www.gstatic.com/devrel-devsite/prod/v0e0f589edd85502a40d78d7d0825db8ea5ef3b99ab4070381ee86977c9168730/cloud/images/favicons/onecloud/super_cloud.png" alt="Google Cloud">
+                        <span>ADK</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="Gemini">
+                        <span>Gemini</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="https://www.gstatic.com/devrel-devsite/prod/v0e0f589edd85502a40d78d7d0825db8ea5ef3b99ab4070381ee86977c9168730/cloud/images/favicons/onecloud/super_cloud.png" alt="BigQuery">
+                        <span>BigQuery</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="https://www.gstatic.com/devrel-devsite/prod/v0e0f589edd85502a40d78d7d0825db8ea5ef3b99ab4070381ee86977c9168730/cloud/images/favicons/onecloud/super_cloud.png" alt="Cloud Run">
+                        <span>Cloud Run</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="https://www.gstatic.com/devrel-devsite/prod/v0e0f589edd85502a40d78d7d0825db8ea5ef3b99ab4070381ee86977c9168730/cloud/images/favicons/onecloud/super_cloud.png" alt="Veo">
+                        <span>Veo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section with Parallax Cards -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">The Team</span>
+                <h2>World-Class Engineers & Innovators</h2>
+                <p>50+ years combined experience from Fortune 500 companies</p>
+            </div>
+
+            <!-- Team Member 1: Abhi Ram -->
+            <div class="team-member" data-aos="fade-up">
+                <div class="member-visual">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">AR</div>
+                        <div class="avatar-ring"></div>
+                    </div>
+                    <div class="member-badges">
+                        <span class="badge-item"><i class="fas fa-trophy"></i> 5x Hackathon Winner</span>
+                        <span class="badge-item"><i class="fas fa-award"></i> Best Employee 2019</span>
+                        <span class="badge-item"><i class="fas fa-file-alt"></i> Patent Holder</span>
+                    </div>
+                </div>
+                <div class="member-content">
+                    <div class="member-header">
+                        <h3>Abhi Ram Salammagari</h3>
+                        <span class="member-title">Sr Machine Learning Engineer @ Workday</span>
+                    </div>
+                    <p class="member-bio">
+                        Full-stack developer and ML expert with 12+ years of experience. Co-founded a startup, 
+                        won multiple hackathons including IATA NDC, and filed patents in AI training methods.
+                        Former Deep Learning TA at San Jose State University.
+                    </p>
+                    <div class="member-skills">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>NLP</span>
+                        <span>Deep Learning</span>
+                        <span>React</span>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="member-stats">
+                        <div class="stat">
+                            <span class="stat-value">12+</span>
+                            <span class="stat-label">Years Exp</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">5</span>
+                            <span class="stat-label">Hackathon Wins</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">1</span>
+                            <span class="stat-label">Patent Filed</span>
+                        </div>
+                    </div>
+                    <div class="member-links">
+                        <a href="https://www.linkedin.com/in/abhiram3040/" target="_blank" class="link-btn linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/abhiram304" target="_blank" class="link-btn github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 2: Eyoha Girma -->
+            <div class="team-member reverse" data-aos="fade-up">
+                <div class="member-visual">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">EG</div>
+                        <div class="avatar-ring"></div>
+                    </div>
+                    <div class="member-badges">
+                        <span class="badge-item"><i class="fas fa-server"></i> Solutions Architect</span>
+                        <span class="badge-item"><i class="fas fa-brain"></i> AI/ML Expert</span>
+                    </div>
+                </div>
+                <div class="member-content">
+                    <div class="member-header">
+                        <h3>Eyoha Girma</h3>
+                        <span class="member-title">Sr. Solutions Architect @ Albertsons</span>
+                    </div>
+                    <p class="member-bio">
+                        Enterprise solutions architect specializing in AI/ML implementations at scale. 
+                        Active contributor to multi-agent systems and deep learning projects. 
+                        Passionate about music genre classification and state management systems.
+                    </p>
+                    <div class="member-skills">
+                        <span>Python</span>
+                        <span>TypeScript</span>
+                        <span>Cloud Architecture</span>
+                        <span>Deep Learning</span>
+                        <span>Multi-Agent Systems</span>
+                    </div>
+                    <div class="member-projects">
+                        <span class="project-tag"><i class="fab fa-github"></i> agent4good</span>
+                        <span class="project-tag"><i class="fab fa-github"></i> AgentCEO</span>
+                        <span class="project-tag"><i class="fab fa-github"></i> FlowState</span>
+                    </div>
+                    <div class="member-links">
+                        <a href="https://www.linkedin.com/in/yg2017/" target="_blank" class="link-btn linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/Yoha02" target="_blank" class="link-btn github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 3: Semaa Amin -->
+            <div class="team-member" data-aos="fade-up">
+                <div class="member-visual">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">SA</div>
+                        <div class="avatar-ring"></div>
+                    </div>
+                    <div class="member-badges">
+                        <span class="badge-item"><i class="fas fa-certificate"></i> PMP Certified</span>
+                        <span class="badge-item"><i class="fas fa-vr-cardboard"></i> VR/AR Developer</span>
+                        <span class="badge-item"><i class="fas fa-drone"></i> AI Drones</span>
+                    </div>
+                </div>
+                <div class="member-content">
+                    <div class="member-header">
+                        <h3>Semaa Amin</h3>
+                        <span class="member-title">Software Systems Engineer @ QCells</span>
+                    </div>
+                    <p class="member-bio">
+                        PMP-certified Technical Program Manager with expertise in VR/AR development and AI systems. 
+                        Built drone-powered search & rescue solutions using YOLOv4 and AR navigation systems. 
+                        Combines creative vision with technical excellence.
+                    </p>
+                    <div class="member-skills">
+                        <span>Project Management</span>
+                        <span>VR/AR</span>
+                        <span>YOLOv4</span>
+                        <span>Python</span>
+                        <span>Data Engineering</span>
+                    </div>
+                    <div class="member-projects">
+                        <span class="project-tag"><i class="fab fa-github"></i> SearchAndRescue-ML</span>
+                        <span class="project-tag"><i class="fab fa-github"></i> NU-Find-AR</span>
+                        <span class="project-tag"><i class="fab fa-github"></i> VR-Roof-Training</span>
+                    </div>
+                    <div class="member-links">
+                        <a href="https://www.linkedin.com/in/semaa-amin/" target="_blank" class="link-btn linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/coder-chick" target="_blank" class="link-btn github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://semaa.dev" target="_blank" class="link-btn portfolio">
+                            <i class="fas fa-globe"></i> Portfolio
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 4: Aashna Kunkolienker -->
+            <div class="team-member reverse" data-aos="fade-up">
+                <div class="member-visual">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">AK</div>
+                        <div class="avatar-ring"></div>
+                    </div>
+                    <div class="member-badges">
+                        <span class="badge-item"><i class="fab fa-google"></i> Google Certified</span>
+                        <span class="badge-item"><i class="fas fa-microchip"></i> NVIDIA Certified</span>
+                        <span class="badge-item"><i class="fab fa-aws"></i> AWS ML Specialty</span>
+                    </div>
+                </div>
+                <div class="member-content">
+                    <div class="member-header">
+                        <h3>Aashna Kunkolienker</h3>
+                        <span class="member-title">GenAI Engineer @ QuadSci</span>
+                    </div>
+                    <p class="member-bio">
+                        AI Engineer specializing in multi-agent systems and enterprise AI solutions at Searce Inc.
+                        NYU graduate (3.95 GPA) with certifications from Google, NVIDIA, and AWS.
+                        Built F1 race intelligence dashboards and MCP servers for telemetry analysis.
+                    </p>
+                    <div class="member-skills">
+                        <span>Multi-Agent Systems</span>
+                        <span>Vertex AI</span>
+                        <span>Google ADK</span>
+                        <span>LangGraph</span>
+                        <span>Computer Vision</span>
+                    </div>
+                    <div class="member-projects">
+                        <a href="https://github.com/aashnakunk/f1-live-pitwall" target="_blank" class="project-tag highlight">
+                            <i class="fab fa-github"></i> f1-live-pitwall ⭐5
+                        </a>
+                        <a href="https://github.com/aashnakunk/fastf1-mcp" target="_blank" class="project-tag">
+                            <i class="fab fa-github"></i> fastf1-mcp
+                        </a>
+                        <span class="project-tag"><i class="fab fa-github"></i> lora-support</span>
+                    </div>
+                    <div class="member-stats">
+                        <div class="stat">
+                            <span class="stat-value">3.95</span>
+                            <span class="stat-label">NYU GPA</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4</span>
+                            <span class="stat-label">Certifications</span>
+                        </div>
+                    </div>
+                    <div class="member-links">
+                        <a href="https://www.linkedin.com/in/aashnakunk/" target="_blank" class="link-btn linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/aashnakunk" target="_blank" class="link-btn github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://www.aashnakunk.com" target="_blank" class="link-btn portfolio">
+                            <i class="fas fa-globe"></i> Portfolio
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 5: Tianchen Cai -->
+            <div class="team-member" data-aos="fade-up">
+                <div class="member-visual">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">TC</div>
+                        <div class="avatar-ring"></div>
+                    </div>
+                    <div class="member-badges">
+                        <span class="badge-item"><i class="fas fa-file-alt"></i> 2 Patents</span>
+                        <span class="badge-item"><i class="fas fa-trophy"></i> AI Arena Winner</span>
+                        <span class="badge-item"><i class="fas fa-graduation-cap"></i> Georgia Tech</span>
+                    </div>
+                </div>
+                <div class="member-content">
+                    <div class="member-header">
+                        <h3>Tianchen Cai</h3>
+                        <span class="member-title">Principal Software Engineer @ OneTrust</span>
+                    </div>
+                    <p class="member-bio">
+                        9+ years experience in high-performance computing and data science. 
+                        Led Classification V2 engine development achieving 93% code reduction and 80% memory optimization.
+                        Holds 2 patents in data discovery and probabilistic data structures.
+                    </p>
+                    <div class="member-skills">
+                        <span>Python</span>
+                        <span>Java</span>
+                        <span>NLP</span>
+                        <span>High-Performance Computing</span>
+                        <span>Spark</span>
+                        <span>Kafka</span>
+                    </div>
+                    <div class="member-stats">
+                        <div class="stat">
+                            <span class="stat-value">93%</span>
+                            <span class="stat-label">Code Reduction</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">80%</span>
+                            <span class="stat-label">Memory Saved</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">2</span>
+                            <span class="stat-label">Patents</span>
+                        </div>
+                    </div>
+                    <div class="member-links">
+                        <a href="https://www.linkedin.com/in/tianchen-cai-b7647590/" target="_blank" class="link-btn linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/tcai30" target="_blank" class="link-btn github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 6: Sreekanth Kannan -->
+            <div class="team-member reverse" data-aos="fade-up">
+                <div class="member-visual">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">SK</div>
+                        <div class="avatar-ring"></div>
+                    </div>
+                    <div class="member-badges">
+                        <span class="badge-item"><i class="fas fa-rocket"></i> CEO & Co-founder</span>
+                        <span class="badge-item"><i class="fas fa-lightbulb"></i> Startup Advisor</span>
+                    </div>
+                </div>
+                <div class="member-content">
+                    <div class="member-header">
+                        <h3>Sreekanth Kannan</h3>
+                        <span class="member-title">CEO & Co-founder @ Stealth</span>
+                    </div>
+                    <p class="member-bio">
+                        Product management and GTM leader with 9+ years of experience. 
+                        Currently driving product strategy at Zscaler while advising multiple startups.
+                        Expert in scaling products from concept to market success.
+                    </p>
+                    <div class="member-skills">
+                        <span>Product Management</span>
+                        <span>Go-to-Market</span>
+                        <span>Strategy</span>
+                        <span>Startup Advisory</span>
+                        <span>Security</span>
+                    </div>
+                    <div class="member-stats">
+                        <div class="stat">
+                            <span class="stat-value">9+</span>
+                            <span class="stat-label">Years PM</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">6+</span>
+                            <span class="stat-label">Years Advisory</span>
+                        </div>
+                    </div>
+                    <div class="member-links">
+                        <a href="https://www.linkedin.com/in/sreekanthk/" target="_blank" class="link-btn linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Section -->
+    <section class="project" id="project">
+        <div class="container">
+            <div class="section-header light" data-aos="fade-up">
+                <span class="section-tag">Live Project</span>
+                <h2>See AI-mmunity in Action</h2>
+                <p>Experience how multi-agent AI transforms public health data access</p>
+            </div>
+            <div class="project-showcase" data-aos="zoom-in">
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="browser-url">aimmunity.io</div>
+                    </div>
+                    <div class="browser-content">
+                        <div class="demo-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Visit Live Demo</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://aimmunity.io/" target="_blank" class="btn btn-primary large">
+                    <span>Launch AI-mmunity</span>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+            <div class="project-repo" data-aos="fade-up">
+                <a href="https://github.com/Yoha02/agent4good" target="_blank" class="repo-card">
+                    <i class="fab fa-github"></i>
+                    <div class="repo-info">
+                        <span class="repo-name">Yoha02/agent4good</span>
+                        <span class="repo-desc">View the source code on GitHub</span>
+                    </div>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content" data-aos="fade-up">
+                <h2>Ready to Build the Future?</h2>
+                <p>
+                    The AI-mmunity team brings world-class expertise in multi-agent AI systems, 
+                    cloud architecture, and enterprise solutions. Let's discuss your next project.
+                </p>
+                <div class="contact-stats">
+                    <div class="contact-stat">
+                        <span class="value">50+</span>
+                        <span class="label">Years Combined Experience</span>
+                    </div>
+                    <div class="contact-stat">
+                        <span class="value">6</span>
+                        <span class="label">Patents Filed</span>
+                    </div>
+                    <div class="contact-stat">
+                        <span class="value">10+</span>
+                        <span class="label">Hackathon Wins</span>
+                    </div>
+                </div>
+                <div class="contact-cta">
+                    <a href="mailto:team@aimmunity.io" class="btn btn-primary large">
+                        <i class="fas fa-envelope"></i>
+                        <span>Get in Touch</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🤖</span>
+                    <span class="logo-text">AI-mmunity</span>
+                </div>
+                <p>Google Cloud Next '26 Presenters</p>
+                <div class="footer-links">
+                    <a href="https://github.com/Yoha02/agent4good" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://aimmunity.io/" target="_blank">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AI-mmunity Team. Built with ❤️ for Google Cloud Next</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
