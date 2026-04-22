@@ -516,17 +516,25 @@ section {
     cursor: pointer;
 }
 
+/* Deployed browsers still style <a> as blue/underlined unless overridden */
+a.tech-item:link,
+a.tech-item:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
 .tech-item:focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 6px;
     border-radius: 10px;
 }
 
+/* Muted at rest but readable; heavy grayscale hides light-on-white SVG details */
 .tech-item img {
     width: 40px;
     height: 40px;
-    filter: grayscale(100%) brightness(0.7) contrast(0.9);
-    opacity: 0.6;
+    filter: grayscale(65%) brightness(1.08) contrast(1.12);
+    opacity: 0.88;
     transition: var(--transition);
 }
 
@@ -535,13 +543,19 @@ section {
     opacity: 1;
 }
 
-/* BigQuery (3rd): hex + inner mark are light-on-light — bump contrast at rest */
-.tech-logos .tech-item:nth-child(3) img {
-    filter: grayscale(100%) brightness(1.08) contrast(1.25) drop-shadow(0 0 1px rgba(255, 255, 255, 0.35));
-    opacity: 0.82;
+/*
+ * BigQuery & Cloud Run (3rd & 4th): hex logos use pale interior glyphs on white fills.
+ * Full color preserves the blue shell; slight contrast boost keeps inner marks visible.
+ */
+.tech-logos .tech-item:nth-child(3) img,
+.tech-logos .tech-item:nth-child(4) img {
+    filter: brightness(1.08) contrast(1.35) saturate(1.15)
+        drop-shadow(0 0 2px rgba(66, 133, 244, 0.45));
+    opacity: 0.94;
 }
 
-.tech-logos .tech-item:nth-child(3):hover img {
+.tech-logos .tech-item:nth-child(3):hover img,
+.tech-logos .tech-item:nth-child(4):hover img {
     filter: none;
     opacity: 1;
 }
@@ -549,6 +563,10 @@ section {
 .tech-item span {
     font-size: 14px;
     color: var(--text-secondary);
+}
+
+.tech-item:hover span {
+    color: var(--text);
 }
 
 /* Team Section */
