@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="AI-mmunity">
+  <defs>
+    <linearGradient id="brand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4285F4"/>
+      <stop offset="100%" stop-color="#34A853"/>
+    </linearGradient>
+  </defs>
+  <!-- Tab icon: immunity (shield) + community health (heartbeat) — on-brand for AI-mmunity -->
+  <rect width="32" height="32" rx="8" fill="#0a0a0f"/>
+  <path fill="none" stroke="url(#brand)" stroke-width="2.25" stroke-linejoin="round"
+        d="M16 6 L24.5 11.5 V18.5 Q24.5 23.5 16 27 Q7.5 23.5 7.5 18.5 V11.5 Z"/>
+  <path fill="none" stroke="#c4c7ce" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        d="M9 18 h4 l2-5 3 10 2.5-7 H23"/>
+</svg>

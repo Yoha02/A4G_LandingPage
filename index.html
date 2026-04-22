@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="description" content="AI-mmunity — multi-agent community health intelligence built with Google ADK. Google Cloud Next '26.">
     <title>AI-mmunity | Google Cloud Next '26</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,6 +12,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
 <body>
     <!-- Animated Background -->
@@ -32,6 +35,11 @@
                 <a href="#project">Project</a>
                 <a href="#contact" class="nav-cta">Contact Us</a>
             </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -126,26 +134,26 @@
             <div class="tech-stack" data-aos="fade-up" data-aos-delay="500">
                 <span class="tech-label">Built With</span>
                 <div class="tech-logos">
-                    <div class="tech-item">
-                        <img src="https://www.gstatic.com/devrel-devsite/prod/v0e0f589edd85502a40d78d7d0825db8ea5ef3b99ab4070381ee86977c9168730/cloud/images/favicons/onecloud/super_cloud.png" alt="Google Cloud">
+                    <a class="tech-item" href="https://adk.dev/" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/adk-logo.png" alt="" decoding="async">
                         <span>ADK</span>
-                    </div>
-                    <div class="tech-item">
-                        <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="Gemini">
+                    </a>
+                    <a class="tech-item" href="https://deepmind.google/technologies/gemini/" target="_blank" rel="noopener noreferrer">
+                        <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="" decoding="async">
                         <span>Gemini</span>
-                    </div>
-                    <div class="tech-item">
-                        <img src="https://www.gstatic.com/devrel-devsite/prod/v0e0f589edd85502a40d78d7d0825db8ea5ef3b99ab4070381ee86977c9168730/cloud/images/favicons/onecloud/super_cloud.png" alt="BigQuery">
+                    </a>
+                    <a class="tech-item" href="https://cloud.google.com/bigquery" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/bigquery-icon.svg" alt="" decoding="async">
                         <span>BigQuery</span>
-                    </div>
-                    <div class="tech-item">
-                        <img src="https://www.gstatic.com/devrel-devsite/prod/v0e0f589edd85502a40d78d7d0825db8ea5ef3b99ab4070381ee86977c9168730/cloud/images/favicons/onecloud/super_cloud.png" alt="Cloud Run">
+                    </a>
+                    <a class="tech-item" href="https://cloud.google.com/run" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/cloud-run-icon.svg" alt="" decoding="async">
                         <span>Cloud Run</span>
-                    </div>
-                    <div class="tech-item">
-                        <img src="https://www.gstatic.com/devrel-devsite/prod/v0e0f589edd85502a40d78d7d0825db8ea5ef3b99ab4070381ee86977c9168730/cloud/images/favicons/onecloud/super_cloud.png" alt="Veo">
+                    </a>
+                    <a class="tech-item" href="https://deepmind.google/models/veo/" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/veo-icon.svg" alt="" decoding="async">
                         <span>Veo</span>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -226,6 +234,7 @@
                     <div class="member-badges">
                         <span class="badge-item"><i class="fas fa-server"></i> Solutions Architect</span>
                         <span class="badge-item"><i class="fas fa-brain"></i> AI/ML Expert</span>
+                        <span class="badge-item"><i class="fas fa-microscope"></i> AI Patent Holder/Researcher</span>
                     </div>
                 </div>
                 <div class="member-content">
@@ -270,8 +279,8 @@
                     </div>
                     <div class="member-badges">
                         <span class="badge-item"><i class="fas fa-certificate"></i> PMP Certified</span>
-                        <span class="badge-item"><i class="fas fa-vr-cardboard"></i> VR/AR Developer</span>
-                        <span class="badge-item"><i class="fas fa-drone"></i> AI Drones</span>
+                        <span class="badge-item"><i class="fab fa-google"></i> GCP Gen AI Leader</span>
+                        <span class="badge-item"><i class="fas fa-chart-line"></i> Tableau Certified Pro</span>
                     </div>
                 </div>
                 <div class="member-content">
@@ -280,16 +289,17 @@
                         <span class="member-title">Software Systems Engineer @ QCells</span>
                     </div>
                     <p class="member-bio">
-                        PMP-certified Technical Program Manager with expertise in VR/AR development and AI systems. 
-                        Built drone-powered search & rescue solutions using YOLOv4 and AR navigation systems. 
-                        Combines creative vision with technical excellence.
+                        PMP-certified TPM with an MS in Computer Science from Northeastern and an MBA. Bridging engineering delivery with product and stakeholder alignment.
+                        Google Cloud Certified Generative AI Leader and Tableau Desktop Certified Professional; ships data-heavy experiences from dashboards to field systems.
+                        Built drone-powered search &amp; rescue with YOLOv4 and AR navigation; deep background in VR/AR and AI-driven prototypes.
                     </p>
                     <div class="member-skills">
-                        <span>Project Management</span>
-                        <span>VR/AR</span>
-                        <span>YOLOv4</span>
+                        <span>Program Management</span>
+                        <span>Generative AI</span>
+                        <span>Google Cloud</span>
+                        <span>Tableau</span>
                         <span>Python</span>
-                        <span>Data Engineering</span>
+                        <span>Data Visualization</span>
                     </div>
                     <div class="member-projects">
                         <span class="project-tag"><i class="fab fa-github"></i> SearchAndRescue-ML</span>
