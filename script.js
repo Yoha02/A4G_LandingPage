@@ -255,6 +255,148 @@ const createMobileMenu = () => {
 // Initialize mobile menu
 createMobileMenu();
 
+// Presentation highlights carousel (pixel-based slide width for reliable layout)
+(function initPresentationCarousel() {
+    const shell = document.querySelector('.carousel-shell');
+    const dotsContainer = document.querySelector('.carousel-dots');
+    if (!shell || !dotsContainer) return;
+
+    const track = shell.querySelector('.carousel-track');
+    const slides = shell.querySelectorAll('.carousel-slide');
+    const prevBtn = shell.querySelector('.carousel-prev');
+    const nextBtn = shell.querySelector('.carousel-next');
+    const viewport = shell.querySelector('.carousel-viewport');
+    const total = slides.length;
+    if (!track || total === 0 || !prevBtn || !nextBtn || !viewport) return;
+
+    let index = 0;
+
+    function layoutSlides() {
+        const w = viewport.offsetWidth;
+        if (!w) return;
+        track.style.width = `${w * total}px`;
+        slides.forEach((slide) => {
+            slide.style.width = `${w}px`;
+        });
+        setTransform();
+        updateDots();
+    }
+
+    function setTransform() {
+        const w = viewport.offsetWidth;
+        track.style.transform = `translateX(-${index * w}px)`;
+    }
+
+    function updateDots() {
+        dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+            const on = i === index;
+            dot.classList.toggle('is-active', on);
+            dot.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+    }
+
+    function goTo(i) {
+        index = ((i % total) + total) % total;
+        setTransform();
+        updateDots();
+    }
+
+    slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', `Photo ${i + 1} of ${total}`);
+        dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    prevBtn.addEventListener('click', () => goTo(index - 1));
+    nextBtn.addEventListener('click', () => goTo(index + 1));
+
+    viewport.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            goTo(index - 1);
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            goTo(index + 1);
+        }
+    });
+
+    let touchStartX = null;
+    viewport.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', (e) => {
+        if (touchStartX === null) return;
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (dx > 56) goTo(index - 1);
+        else if (dx < -56) goTo(index + 1);
+        touchStartX = null;
+    }, { passive: true });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => layoutSlides(), 120);
+    });
+
+    if (typeof ResizeObserver !== 'undefined') {
+        const ro = new ResizeObserver(() => layoutSlides());
+        ro.observe(viewport);
+    }
+
+    layoutSlides();
+
+    const lightbox = document.getElementById('photo-lightbox');
+    const lightboxImg = lightbox?.querySelector('.photo-lightbox-img');
+    const lightboxClose = lightbox?.querySelector('.photo-lightbox-close');
+    const lightboxBackdrop = lightbox?.querySelector('.photo-lightbox-backdrop');
+
+    function onLightboxEscape(e) {
+        if (e.key === 'Escape' && lightbox && !lightbox.hasAttribute('hidden')) {
+            closePhotoLightbox();
+        }
+    }
+
+    function openPhotoLightbox(src, alt) {
+        if (!lightbox || !lightboxImg) return;
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || 'Presentation photo';
+        lightbox.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+        document.addEventListener('keydown', onLightboxEscape);
+        lightboxClose?.focus({ preventScroll: true });
+    }
+
+    function closePhotoLightbox() {
+        if (!lightbox || !lightboxImg) return;
+        lightbox.setAttribute('hidden', '');
+        lightboxImg.removeAttribute('src');
+        lightboxImg.alt = '';
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', onLightboxEscape);
+    }
+
+    shell.querySelectorAll('.carousel-slide img').forEach((img) => {
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const src = img.currentSrc || img.getAttribute('src');
+            if (src) openPhotoLightbox(src, img.getAttribute('alt') || '');
+        });
+    });
+
+    lightboxClose?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closePhotoLightbox();
+    });
+
+    lightboxBackdrop?.addEventListener('click', closePhotoLightbox);
+})();
+
 // Console Easter egg
 console.log('%c🤖 AI-mmunity', 'font-size: 24px; font-weight: bold; color: #4285f4;');
 console.log('%cBuilt with ❤️ for Google Cloud Next \'26', 'font-size: 14px; color: #34a853;');

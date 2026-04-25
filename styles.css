@@ -569,6 +569,259 @@ a.tech-item:visited {
     color: var(--text);
 }
 
+/* Presentation highlights carousel */
+.highlights {
+    background: var(--dark);
+    position: relative;
+}
+
+.highlights::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(66, 133, 244, 0.35), rgba(52, 168, 83, 0.35), transparent);
+    pointer-events: none;
+}
+
+.carousel-shell {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: 'prev viewport next';
+    align-items: center;
+    gap: 20px;
+    max-width: 1120px;
+    margin: 0 auto 28px;
+}
+
+.carousel-shell .carousel-prev {
+    grid-area: prev;
+}
+
+.carousel-shell .carousel-viewport {
+    grid-area: viewport;
+}
+
+.carousel-shell .carousel-next {
+    grid-area: next;
+}
+
+.carousel-viewport {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--dark-card);
+    box-shadow: var(--shadow-lg), 0 0 0 1px rgba(66, 133, 244, 0.06) inset;
+}
+
+.carousel-track {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+
+.carousel-slide {
+    flex: 0 0 auto;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.carousel-slide img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: min(68vh, 580px);
+    object-fit: contain;
+    display: block;
+    border-radius: 12px;
+    cursor: zoom-in;
+}
+
+.carousel-nav {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(26, 26, 37, 0.95);
+    backdrop-filter: blur(8px);
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.carousel-nav:hover {
+    border-color: rgba(66, 133, 244, 0.55);
+    color: var(--primary);
+    box-shadow: 0 0 28px rgba(66, 133, 244, 0.25);
+}
+
+.carousel-nav:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+.carousel-dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.22);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.carousel-dot:hover {
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.carousel-dot.is-active {
+    background: var(--primary);
+    box-shadow: 0 0 12px rgba(66, 133, 244, 0.65);
+    transform: scale(1.15);
+}
+
+.carousel-dot:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .carousel-shell {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            'viewport viewport'
+            'prev next';
+        gap: 14px 20px;
+    }
+
+    .carousel-nav {
+        width: 46px;
+        height: 46px;
+        justify-self: center;
+    }
+
+    .carousel-shell .carousel-prev {
+        justify-self: end;
+        margin-right: 6px;
+    }
+
+    .carousel-shell .carousel-next {
+        justify-self: start;
+        margin-left: 6px;
+    }
+}
+
+/* Lightbox for carousel photos */
+.photo-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.photo-lightbox[hidden] {
+    display: none !important;
+}
+
+.photo-lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: rgba(5, 5, 10, 0.92);
+    backdrop-filter: blur(10px);
+    cursor: zoom-out;
+}
+
+.photo-lightbox-inner {
+    position: relative;
+    z-index: 1;
+    max-width: min(96vw, 1400px);
+    max-height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-lightbox-img {
+    max-width: 100%;
+    max-height: 92vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.photo-lightbox-close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(26, 26, 37, 0.98);
+    color: var(--text);
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.photo-lightbox-close:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    box-shadow: 0 0 20px rgba(66, 133, 244, 0.35);
+}
+
+.photo-lightbox-close:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .photo-lightbox-close {
+        top: 8px;
+        right: 8px;
+    }
+
+    .photo-lightbox-inner {
+        max-height: 88vh;
+    }
+}
+
 /* Team Section */
 .team {
     background: var(--dark);

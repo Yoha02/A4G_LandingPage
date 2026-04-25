@@ -84,7 +84,7 @@
             </div>
             <div class="floating-card card-4">
                 <i class="fas fa-bolt"></i>
-                <span>Built in 3 Days</span>
+                <span>Built to Scale</span>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -156,6 +156,39 @@
                     </a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Conference presentation highlights -->
+    <section class="highlights" id="highlights" aria-labelledby="highlights-heading">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Google Cloud Next '26</span>
+                <h2 id="highlights-heading">From the Stage</h2>
+                <p>Moments from our AI-mmunity presentation—architecture, product story, and live demo on the Google Cloud floor.</p>
+            </div>
+            <div class="carousel-shell" data-aos="fade-up" data-aos-delay="100">
+                <button type="button" class="carousel-nav carousel-prev" aria-label="Previous photo">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <div class="carousel-viewport" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Presentation photo gallery">
+                    <div class="carousel-track">
+                        <!-- Order: on-image numbers 1–7, then next-01 (images_8) -->
+                        <div class="carousel-slide"><img src="assets/presentation/next-04.png" alt="Google Cloud Next presentation, photo 1 of 8." loading="lazy" decoding="async" width="1200" height="675"></div>
+                        <div class="carousel-slide"><img src="assets/presentation/next-08.png" alt="Google Cloud Next presentation, photo 2 of 8." loading="lazy" decoding="async" width="1200" height="675"></div>
+                        <div class="carousel-slide"><img src="assets/presentation/next-07.png" alt="Google Cloud Next presentation, photo 3 of 8." loading="lazy" decoding="async" width="1200" height="675"></div>
+                        <div class="carousel-slide"><img src="assets/presentation/next-06.png" alt="Google Cloud Next presentation, photo 4 of 8." loading="lazy" decoding="async" width="1200" height="675"></div>
+                        <div class="carousel-slide"><img src="assets/presentation/next-02.png" alt="Google Cloud Next presentation, photo 5 of 8." loading="lazy" decoding="async" width="1200" height="675"></div>
+                        <div class="carousel-slide"><img src="assets/presentation/next-05.png" alt="Google Cloud Next presentation, photo 6 of 8." loading="lazy" decoding="async" width="1200" height="675"></div>
+                        <div class="carousel-slide"><img src="assets/presentation/next-03.png" alt="Google Cloud Next presentation, photo 7 of 8." loading="lazy" decoding="async" width="1200" height="675"></div>
+                        <div class="carousel-slide"><img src="assets/presentation/next-01.png" alt="Google Cloud Next presentation, photo 8 of 8." loading="lazy" decoding="async" width="1200" height="675"></div>
+                    </div>
+                </div>
+                <button type="button" class="carousel-nav carousel-next" aria-label="Next photo">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="carousel-dots" role="tablist" aria-label="Choose slide" data-aos="fade-up" data-aos-delay="150"></div>
         </div>
     </section>
 
@@ -585,6 +618,17 @@
             </div>
         </div>
     </footer>
+
+    <!-- Full-size presentation photo (opened from carousel) -->
+    <div id="photo-lightbox" class="photo-lightbox" hidden role="dialog" aria-modal="true" aria-label="Enlarged presentation photo">
+        <button type="button" class="photo-lightbox-backdrop" aria-label="Close enlarged photo"></button>
+        <div class="photo-lightbox-inner">
+            <button type="button" class="photo-lightbox-close" aria-label="Close enlarged photo">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <img class="photo-lightbox-img" src="" alt="">
+        </div>
+    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
